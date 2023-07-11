@@ -1,0 +1,63 @@
+Topic 1: Statistics
+--> Academic discipline dealing with all aspects of data.
+Perspectives:
+* Art of summarizing data e.g art of showing good plots
+* Science of uncertainity (most information is uncertain)
+* Science of decisions (people or machines can make decisions from data)
+* Science of variations (summarizing data e.g taking averages, maximas, minimas) or central tedency of spread
+* art of forecasting (Predicting future trends)
+* Science of measurement and data collection
+
+Topic 2: Foundations of data
+	Source of data:
+		-- Designed data - "artifically collected "
+					(Surverys, studies etc)
+		-- Organic data (process generated i.e data collected from real-world processes e.g sensors data, data of network packets )
+					(sentiments analysis)
+
+	which source used mostly: Organic is used as this data is accurate.
+
+	For both of these data needs to be i.i.d
+		"independent", "identically distributed"
+
+Question: What is source of NHANES data?
+Answer: Designed data because it is collected using Surverys.
+
+Topic 3: Types of data
+	-- Some data is not numeric!
+		e.g race or gender
+
+	-- Just as we have data types in programming languages, we have different types here.
+	-- weight -- numeric, continuous
+	-- # of kids ------ numeric, discrete (not 1.1 or 2.5 e.g number of childrens in a house)
+	-- Age group (child, adult, elder) ------ Categorical, ordered
+	-- Gender ----------Categorical, unordered (e.g we cannot say male is older than female and viceversa or we can't say male comes first and then female)
+
+SO In computer everything will go as numbers and for our processing purpose we assign these numbers.
+# For ordered values we can say child 0, adult 1, elder 2 (As values have order and our assignment 1,2,3 also has order so we are fine). 
+
+# but for gender it can be represented as M/F.
+				       or 0/1.
+we can assign 65, 75 or whatever we want to M/F as their is no order.
+But for computer their is an order here as so computer can Predict that small value gender has big height and large values gender has small height.
+
+What we know, is that right what our computer Predicting?
+No! we know that height has no connection with a person as male or female.
+# Also whatif in future we says F will be labled as 1 and M as 0, model will break.
+# Problem here is we cannot teach this to our computer i.e model.
+# so we have to change this 0 and 1 so machine cannot compare these two.
+Solution:
+# we will create a vector M has 1 so it's first index (0) will be 1 and all others as 0 e.g M = [1 0] and F = [0 1]. this way we can make these seems computer to be totally independent.
+
+ANother example races: B:0, W:1, H:2 so B = [1 0 0] W = [0 1 0] H = [0 0 1]
+--> Now we cannot compare any two vectors and this representaion is known as "One hot vector representaion" as we make 1 as on and all other 0.
+--> You can compare two vectors magnitude but as whole 2 values vectors are not comaparablee.g (2,2) < (3,2) WRONG
+but we can say 3 < 4 RIGHT (magnitude of above vectors)
+
+Summary: When u have unordered data make sure u make it unordered for machine as well using one hot vectors representaion.
+
+--> Screenshot here.
+As discrete and ordinal variable types both are discrete and ordered so what's difference:
+In discrete average makes sense e.g number of kids in pakistan in a house on average are 2.5, fine but in Categorical case we cannot say what is average age group.
+
+
